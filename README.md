@@ -4,7 +4,7 @@ Blockchain based e-voting system
 Using Azure Blockchain to build a reliable e-voting paltform which aims at improving the security and decreases the cost of hosting a nationwide election.
 The distributed, immutable, incontrovertible, public ledger characterstics of the blockchain technology can be exhausted to come up with a system that is immune to the hacking accutions,alike the currently existing voting methodologies.
 
-We plan to use a permissioned blockchain,(a variation of the consortium-based blockchain) which uses the proof-of-authority(POA) consensus algorithm. In proof-ofauthority-based networks, transactions and blocks are validated by special approved accounts,the Validators.
+We plan to use a permissioned blockchain,(a variation of the consortium-based blockchain) which uses the proof-of-authority(POA) consensus algorithm. In Proof-Of-Authority based networks, transactions and blocks are validated by special approved accounts,the Validators.
 A blockchain based system based on POA consensus algorithm will enable us to empower only certain numbers of users to be validators.
 Validators can be paid for the services rendered.Moreover the main benifit of using a private blockchain is that, the danger of eavesdropper or unauthorised personnel gaining access to the incoming data.
 
