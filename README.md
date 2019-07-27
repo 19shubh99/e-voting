@@ -11,7 +11,7 @@ Validators can be paid for the services rendered.Moreover the main benifit of us
 Smart contract comprises of the roles in our model,mazor roles to be verified using a samrt contract in our model of e-voting system are
 
 
-![](1.png)
+![](roles.PNG)
 
 
 #Election Adminstrators - reponsible for all the mazor decisons regarding the election.
@@ -47,6 +47,8 @@ Mentioned below are the processes involved in ideal case of our model
 * Each vote i.e. a transaction is as per the ballot SC of that constituency, and the voter be provided with the UID for his transaction.
 * Tally of results is maintained by each of the ballot smart contract.
 * Each vote can be verified using the UID.
+
+![](workFlow.PNG)
 
 
 Each registered user has an ID and chooses a PIN, for unique identification of the personnel.
