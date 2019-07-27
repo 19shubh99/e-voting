@@ -11,13 +11,10 @@ Validators can be paid for the services rendered.Moreover the main benifit of us
 Smart contract comprises of the roles in our model,mazor roles to be verified using a samrt contract in our model of e-voting system are
 
 
-image:: https://drive.google.com/drive/folders/11whZQh41OV2aT88h6dnkmsi4VEL9u447
-  :height: 100px
-  :width: 200 px
-  :scale: 50 %
+![](1.png)
 
 
-# Election Adminstrators - reponsible for all the mazor decisons regarding the election.
+#Election Adminstrators - reponsible for all the mazor decisons regarding the election.
 Actions:
 1.Manage elections
 2.Conﬁgurate ballots
