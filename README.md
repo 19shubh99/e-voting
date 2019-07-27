@@ -1,4 +1,4 @@
-# e-voting
+# E-voting
 Blockchain based e-voting system
 
 Using Azure Blockchain to build a reliable e-voting paltform which aims at improving the security and decreases the cost of hosting a nationwide election.
