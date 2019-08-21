@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication with firebase</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
+
+    <style>
+        #app{
+        width:50%;
+        margin: 100px auto;
+        }
+        .hide{
+        display: none;
+        }  
+    </style>
+    <style>
+            #register{ width: 280px;
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 transform: translate(-50%,-50%);
+                 color: white;}
+            #h11{
+                float: left;
+                font-size: 20px;
+    border-bottom: 6px solid #4caf50;
+    margin-bottom: 50px;
+    padding: 13px 0;
+            }
+             </style>
+</head>
+<body >
+
+    <div class="login-box" id="login-box">
+        
+        <img src="jcon.jpeg" class="icon">
+
+        <center>
+        <h1>Login</h1>
+        </center>
+        <div class="textbox">
+            <i class="fas fa-user"></i>
+        <input type="email" id="txtEmail" placeholder="Email" required> 
+        </div>
+        <div class="textbox">
+                <i class="fas fa-lock"></i>
+        <input type="password" id="txtPassword" placeholder="Password" required>
+        </div>
+        <center>
+        <button id="btnLogin" class="btn" >Log in</button>
+        <!-- <button id="toSignUp" class="btn" onclick="signUp()">Need a account?</button> -->
+       
+        <h3 onclick="signUp()" id="toSignUp" class="btn_light">Need a account?</h3>
+    </center>
+    
+    </div> 
+    <div class='hide' id="register-box">   
+    <div class="login-box1"  >
+            
+            <img src="jcon.jpeg" class="icon">
+
+            <center>
+            <h1>Register</h1>
+            </center>
+            <div class="textbox">
+                    <i class="fas fa-user"></i>
+            <input type="email" id="RtxtEmail" placeholder="Enter email" required> 
+            </div>
+            <div class="textbox">
+                    <i class="fas fa-lock"></i>
+            <input type="password" id="RtxtPassword" placeholder="Enter password" required >
+            </div>
+            <center>
+            <button id="btnSignUp" class="btn" >Sign Up</button>
+            
+            <h3 onclick="LogIn()" id="toSignUp" class="btn_light">Already have an account?</h3>
+            </center>
+    </div>
+   </div>
+    <div class="hide" id="signedin">
+        
+            <button id="btnLogOut" class="logout">Log Out</button>
+            <center>
+                <h3 id="description">Status : :  </h3>
+            </center>
+     <div class="login-box2" id='Adh' >
+            <div class="textbox">
+            <input type="number" id="Adhaar" placeholder="Enter Adhaar No." required> 
+            
+            </div>
+            <center>
+            <button id="add_data" onclick="save()" class="btn" >Save</button>
+            </center>
+     </div>
+     <div id="allowedtovote" class="login-box2">
+                    <center>
+                            <h3>Select your prefrences</h3>
+                            </center>
+                <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content"> -->
+                    <select class="custom-select" style="width:200px; height:30px;font-size: 15px; text-align: center;" id="select1"> 
+                        <option value="select" >Select Choice 1</option>
+                        <option value="BJP" >BJP</option>
+                        <option value="CNG">CNG</option>
+                        <option value="AAP">AAP</option>
+                        <option value="ADMK">ADMK</option>
+                        <option value="BSP">BSP</option>
+                      </select>
+
+                      <select class="custom-select" style="width:200px; height:30px;font-size: 15px;" id="select2"> 
+                            <option value="select">Select Choice 2</option>
+                            <option value="BJP">BJP</option>
+                            <option value="CNG">CNG</option>
+                            <option value="AAP">AAP</option>
+                            <option value="ADMK">ADMK</option>
+                            <option value="BSP">BSP</option>
+                      </select>
+
+                      <select class="custom-select" style="width:200px; height:30px;font-size: 15px;" id="select3"> 
+                            <option value="select" >Select Choice 3</option>
+                            <option value="BJP">BJP</option>
+                            <option value="CNG">CNG</option>
+                            <option value="AAP">AAP</option>
+                            <option value="ADMK">ADMK</option>
+                            <option value="BSP">BSP</option>
+                      </select>
+                <!-- </div> -->
+               
+               <br>
+               <br>
+            
+              
+                <center>
+                        <div id="qrcode" ></div>
+          <button id="ballot" onclick="myballot()" class="btn" >Generate Vote</button>
+          <br>
+          <br>
+          <button id="guide"  class="btn" onclick="guide()" >Vote Guide</button>
+               
+          <br>
+                    <!-- <button id="vote" onclick="voting()" class="btn" >Vote</button> -->
+                </center>
+             </div>
+
+            </div>    
+        
+        <!-- <button id="check" onclick="checkwithLogin()" class="btn" >Check Status</button> -->
+        
+       
+     
+    
+     
+    <div id="results"></div>
+    <script type="text/javascript" src="main.js"></script>
+    <script src="qrcode.min.js"></script>
+   
+    
+    
+</body>
+</html>
