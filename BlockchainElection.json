@@ -1,0 +1,392 @@
+{
+
+  "ApplicationName": "BlockchainElection",
+
+  "DisplayName": "Blockchain Election",
+
+  "Description": "...",
+
+  "ApplicationRoles": [
+
+    {
+
+      "Name": "Voter",
+
+      "Description": "..."
+
+    },
+
+    {
+
+      "Name": "ElectionCommission",
+
+      "Description": "..."
+
+    }
+
+  ],
+
+  "Workflows": [
+
+    {
+
+      "Name": "BlockchainElection",
+
+      "DisplayName": "Blockchain Election",
+
+      "Description": "...",
+
+      "Initiators": [
+
+        "ElectionCommission"
+
+      ],
+
+      "StartState": "PreVoting",
+
+      "Properties": [
+
+        {
+
+          "Name": "State",
+
+          "DisplayName": "State",
+
+          "Description": "Holds the state of the process",
+
+          "Type": {
+
+            "Name": "state"
+
+          }
+
+        },
+        {
+
+          "Name": "Result",
+
+          "DisplayName": "Result",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "string"
+
+          }
+
+        },
+        {
+
+          "Name": "totalVoter",
+
+          "DisplayName": "Total Voters",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "int"
+
+          }
+
+        },
+        {
+
+          "Name": "CandidateA",
+
+          "DisplayName": "Candidate A",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "int"
+
+          }
+
+        },
+        {
+
+          "Name": "CandidateB",
+
+          "DisplayName": "Candidate B",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "int"
+
+          }
+
+        },
+        {
+
+          "Name": "CandidateC",
+
+          "DisplayName": "Candidate C",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "int"
+
+          }
+
+        },
+        {
+
+          "Name": "ElectionCommission",
+
+          "DisplayName": "Election Commission",
+
+          "Description": "...",
+
+          "Type": {
+
+            "Name": "ElectionCommission"
+
+          }
+
+        }
+
+
+      ],
+       
+      "Constructor": {
+
+        "Parameters": []
+},
+
+      "Functions": [
+
+        {
+
+          "Name": "BeginVotingProcess",
+
+          "DisplayName": "Begin Voting Process",
+
+          "Description": "...",
+
+          "Parameters": []
+
+        },
+        {
+
+          "Name": "EndVotingProcess",
+
+          "DisplayName": "End Voting Process",
+
+          "Description": "...",
+
+          "Parameters": []
+
+        },
+        
+        {
+
+          "Name": "CountVote",
+
+          "DisplayName": "Count Vote",
+
+          "Description": "...",
+
+          "Parameters": []
+
+        },
+        {
+
+          "Name": "CastVote",
+
+          "DisplayName": "Cast Vote",
+
+          "Description": "...",
+
+          "Parameters": [
+
+
+            {
+
+              "Name": "votesequence",
+
+              "Description": "...",
+
+              "DisplayName": "vote sequence",
+
+              "Type": {
+
+                "Name": "string"
+
+              }
+
+            }
+
+          ]
+
+        }
+
+           
+
+
+      ],
+
+      "States": [
+
+        {
+
+          "Name": "PreVoting",
+
+          "DisplayName": "PreVoting",
+
+          "Description": "...",
+
+          "PercentComplete": 0,
+
+          "Style": "Success",
+
+          "Transitions": [
+
+            {
+
+              "AllowedRoles": [
+
+                "ElectionCommission"
+
+              ],
+
+              "AllowedInstanceRoles": [],
+
+              "Description": "...",
+
+              "Function": "BeginVotingProcess",
+
+              "NextStates": [
+
+                "LiveVoting"
+
+              ],
+
+              "DisplayName": "Begin Voting Process"
+
+            }
+
+          ]
+
+        },
+
+
+        {
+
+          "Name": "LiveVoting",
+
+          "DisplayName": "Can Vote",
+
+          "Description": "...",
+
+          "PercentComplete": 30,
+
+          "Style": "Success",
+
+          "Transitions": [
+
+            {
+
+               "AllowedRoles": ["Voter"],
+
+              "AllowedInstanceRoles": [  ],
+
+              "Description": "...",
+
+              "Function": "CastVote",
+
+              "NextStates": ["LiveVoting" ],
+
+              "DisplayName": "Live Voting"
+
+            },
+
+            {
+
+              "AllowedRoles": ["ElectionCommission" ],
+
+              "AllowedInstanceRoles": [ ],
+
+              "Description": "...",
+
+              "Function": "EndVotingProcess",
+
+              "NextStates": [ "Terminate" ],
+
+              "DisplayName": "End"
+
+            },
+
+            
+
+          ]
+
+        },
+
+        {
+
+          "Name": "Terminate",
+
+          "DisplayName": "Terminate",
+
+          "Description": "...",
+
+          "PercentComplete": 40,
+
+          "Style": "Success",
+
+          "Transitions": [
+
+            {
+
+              "AllowedRoles": ["ElectionCommission"],
+
+              "AllowedInstanceRoles": [  ],
+
+              "Description": "...",
+
+              "Function": "CountVote",
+
+              "NextStates": [
+
+                "Results"
+
+              ],
+
+              "DisplayName": "Accept Sharing Request"
+
+            }
+          ]
+
+        },
+
+        {
+
+          "Name": "Results",
+
+          "DisplayName": "Sharing Results",
+
+          "Description": "...",
+
+          "PercentComplete": 100,
+
+          "Style": "Success",
+          
+          "Transitions" :[]
+
+        }
+
+        
+      ]
+
+    }
+
+  ]
+
+}
